@@ -6,6 +6,8 @@ Script for [AutoHotkey](https://www.autohotkey.com/) that creates a secondary ke
 ### Accessing secondary layer
 * Secondary layer is accessed by holding down `CapsLock`.
 * `CapsLock` still functions as normal when tapped.
+### Backspace
+* `Backspace` swapped with `\`
 ### Space Cadet Shift
 * Left and right `Shift` keys now output opening parenthesis `(` and closing parenthesis `)`, respectively, when tapped.
 * When held down they function normally.
