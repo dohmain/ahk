@@ -1,7 +1,7 @@
 # AutoHotkey script
 Script for [AutoHotkey](https://www.autohotkey.com/) that creates a secondary keyboard layer for easy access to the navigation cluster and volume controls.
 ## Layout
-[Layout Image](./layout.png)
+![Layout Image](./layout.png)
 ## Features
 ### Accessing secondary layer
 * Secondary layer is accessed by holding down `CapsLock`.
