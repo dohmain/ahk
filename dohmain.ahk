@@ -95,6 +95,7 @@ SetWorkingDir %A_ScriptDir%
 		}
 	return
 
+; Windows 10 Virtual Desktop Navigation -------------------------
 	CapsLock & ,::
 		SendInput ^#{Left}
 		return 
