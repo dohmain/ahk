@@ -94,3 +94,11 @@ SetWorkingDir %A_ScriptDir%
 			Send, )
 		}
 	return
+
+	CapsLock & ,::
+		SendInput ^#{Left}
+		return 
+
+	CapsLock & .::
+		SendInput ^#{Right}
+		return
