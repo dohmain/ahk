@@ -7,204 +7,132 @@ SetWorkingDir %A_ScriptDir%
 #UseHook On
 
 ; Arrows on ijkl ------------------------------------------------
-CapsLock & i::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Up}
-	return
-}
-else
-{
-	SendInput {Blind}i
-	return
-}
+	CapsLock & i::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Up}
+		return
+	}
 
-CapsLock & j::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Left}
-	return
-}
-else
-{
-	SendInput {Blind}j
-	return
-}
+	CapsLock & j::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Left}
+		return
+	}
+	
+	CapsLock & k::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Down}
+		return
+	}
 
-CapsLock & k::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Down}
-	return
-}
-else
-{
-	SendInput {Blind}k
-	return
-}
-
-CapsLock & l::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Right}
-	return
-}
-else
-{
-	SendInput {Blind}l
-	return
-}
+	CapsLock & l::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Right}
+		return
+	}
 
 ; Home on u -----------------------------------------------------
-CapsLock & u::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{HOME}
-	return
-}
-else
-{
-	SendInput {Blind}u
-	return
-}
+	CapsLock & u::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{HOME}
+		return
+	}
 
 ; End on o ------------------------------------------------------
-CapsLock & o::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{END}
-	return
-}
-else
-{
-	SendInput {Blind}o
-	return
-}
+	CapsLock & o::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{END}
+		return
+	}
 
 ; PageUp on h ---------------------------------------------------
-CapsLock & h::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{PgUp}
-	return
-}
-else
-{
-	SendInput {Blind}h
-	return
-}
+	CapsLock & h::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{PgUp}
+		return
+	}
 
 ; PageDown on n -------------------------------------------------
-CapsLock & n::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{PgDn}
-	return
-}
-else
-{
-	SendInput {Blind}n
-	return
-}
+	CapsLock & n::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{PgDn}
+		return
+	}
 
 ; Delete on ; ---------------------------------------------------
-CapsLock & `;::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Delete}
-	return
-}
-else
-{
-	SendInput {Blind};
-	return
-}
+	CapsLock & `;::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Delete}
+		return
+	}
 
 ; Insert on ' ---------------------------------------------------
-CapsLock & '::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Insert}
-	return
-}
-else
-{
-	SendInput {Blind}'
-	return
-}
+	CapsLock & '::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Insert}
+		return
+	}
 
 ; PrintScreen on p-----------------------------------------------
-CapsLock & p::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{PrintScreen}
-	return
-}
-else
-{
-	SendInput {Blind}p
-	return
-}
+	CapsLock & p::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{PrintScreen}
+		return
+	}
 
-; Mute-----------------------------------------------------------
-CapsLock & s::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Volume_Mute}
-	return
-}
-else
-{
-	SendInput {Blind}s
-	return
-}
+; Mute on s------------------------------------------------------
+	CapsLock & s::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Volume_Mute}
+		return
+	}
 
-; Volume Down----------------------------------------------------
-CapsLock & d::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Volume_Down 1}
-	return
-}
-else
-{
-	SendInput {Blind}d
-	return
-}
+; Volume Down on d-----------------------------------------------
+	CapsLock & d::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Volume_Down 1}
+		return
+	}
 
-;Volume Up-------------------------------------------------------
+; Volume Up on f--------------------------------------------------
+	CapsLock & f::
+	if GetKeyState("CapsLock")
+	{
+		SendInput {Blind}{Volume_Up 1}
+		return
+	}
 
-CapsLock & f::
-if GetKeyState("CapsLock")
-{
-	SendInput {Blind}{Volume_Up 1}
+; Backspace and \ swap-------------------------------------------
+	Backspace::\
 	return
-}
-else
-{
-	SendInput {Blind}f
+
+	\::Backspace
 	return
-}
-
-; Backspace to |\ -----------------------------------------------
-Backspace::\
-return
-
-; |\ to Backspace -----------------------------------------------
-\::Backspace
-return
 
 ; Space Cadet Shift ---------------------------------------------
-~LShift::
-	KeyWait, LShift
-	if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "LShift") {
-		Send, (
-	}
-return
+	~LShift::
+		KeyWait, LShift
+		if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "LShift") {
+			Send, (
+		}
+	return
 
-~RShift::
-	KeyWait, RShift
-	if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "RShift") {
-		Send, )
-	}
-return
+	~RShift::
+		KeyWait, RShift
+		if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "RShift") {
+			Send, )
+		}
+	return
