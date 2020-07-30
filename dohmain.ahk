@@ -1,126 +1,210 @@
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#NoEnv
+#Warn
+SendMode Input
+SetWorkingDir %A_ScriptDir%
 
 #SingleInstance Force
 #UseHook On
 
 ; Arrows on ijkl ------------------------------------------------
 CapsLock & i::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{Up}
-Else, SendInput {Blind}i
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Up}
+	return
+}
+else
+{
+	SendInput {Blind}i
+	return
+}
 
 CapsLock & j::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{Left}
-Else, SendInput {Blind}j
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Left}
+	return
+}
+else
+{
+	SendInput {Blind}j
+	return
+}
 
 CapsLock & k::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{Down}
-Else, SendInput {Blind}k
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Down}
+	return
+}
+else
+{
+	SendInput {Blind}k
+	return
+}
 
 CapsLock & l::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{Right}
-Else, SendInput {Blind}l
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Right}
+	return
+}
+else
+{
+	SendInput {Blind}l
+	return
+}
 
 ; Home on u -----------------------------------------------------
 CapsLock & u::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{HOME}
-Else, SendInput {Blind}u
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{HOME}
+	return
+}
+else
+{
+	SendInput {Blind}u
+	return
+}
 
 ; End on o ------------------------------------------------------
 CapsLock & o::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{END}
-Else, SendInput {Blind}o
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{END}
+	return
+}
+else
+{
+	SendInput {Blind}o
+	return
+}
 
 ; PageUp on h ---------------------------------------------------
 CapsLock & h::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{PgUp}
-Else, SendInput {Blind}h
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{PgUp}
+	return
+}
+else
+{
+	SendInput {Blind}h
+	return
+}
 
 ; PageDown on n -------------------------------------------------
 CapsLock & n::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{PgDn}
-Else, SendInput {Blind}n
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{PgDn}
+	return
+}
+else
+{
+	SendInput {Blind}n
+	return
+}
 
 ; Delete on ; ---------------------------------------------------
 CapsLock & `;::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{Delete}
-Else, SendInput {Blind};
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Delete}
+	return
+}
+else
+{
+	SendInput {Blind};
+	return
+}
 
-; Insert on '
+; Insert on ' ---------------------------------------------------
 CapsLock & '::
-GetKeyState, CapsLockMode, CapsLock, T 
-IfEqual, CapsLockMode, D, SendInput {Blind}{Insert}
-Else, SendInput {Blind}'
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Insert}
+	return
+}
+else
+{
+	SendInput {Blind}'
+	return
+}
 
 ; PrintScreen on p-----------------------------------------------
 CapsLock & p::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Blind}{PrintScreen}
-Else, SendInput {Blind}p
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{PrintScreen}
+	return
+}
+else
+{
+	SendInput {Blind}p
+	return
+}
 
 ; Mute-----------------------------------------------------------
 CapsLock & s::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Volume_Mute}
-Else, SendInput {Blind}s
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Volume_Mute}
+	return
+}
+else
+{
+	SendInput {Blind}s
+	return
+}
 
 ; Volume Down----------------------------------------------------
 CapsLock & d::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Volume_Down 1}
-Else, SendInput {Blind}d
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Volume_Down 1}
+	return
+}
+else
+{
+	SendInput {Blind}d
+	return
+}
 
 ;Volume Up-------------------------------------------------------
 
 CapsLock & f::
-GetKeyState, CapsLockMode, CapsLock, T
-IfEqual, CapsLockMode, D, SendInput {Volume_Up 1}
-Else, SendInput {Blind}f
-Return
+if GetKeyState("CapsLock")
+{
+	SendInput {Blind}{Volume_Up 1}
+	return
+}
+else
+{
+	SendInput {Blind}f
+	return
+}
 
 ; Backspace to |\ -----------------------------------------------
 Backspace::\
-Return
+return
 
 ; |\ to Backspace -----------------------------------------------
 \::Backspace
-Return
+return
 
 ; Space Cadet Shift ---------------------------------------------
 ~LShift::
 	KeyWait, LShift
-	If (A_TimeSinceThisHotkey < 300 and A_PriorKey = "LShift") {
+	if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "LShift") {
 		Send, (
 	}
 return
 
 ~RShift::
 	KeyWait, RShift
-	If (A_TimeSinceThisHotkey < 300 and A_PriorKey = "RShift") {
+	if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "RShift") {
 		Send, )
 	}
 return
