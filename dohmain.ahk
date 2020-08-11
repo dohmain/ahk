@@ -103,3 +103,13 @@ SetWorkingDir %A_ScriptDir%
 	CapsLock & .::
 		SendInput ^#{Right}
 		return
+
+; Browser Back/Forward ------------------------------------------
+
+	CapsLock & PgUp::
+		SendInput {Browser_Back}
+		return
+
+	CapsLock & PgDn::
+		SendInput {Browser_Forward}
+		return
