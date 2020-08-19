@@ -30,3 +30,9 @@ The Navigation Cluster is laid out to be easily accessed with the right hand wit
   * `Insert` on `'`
 * #### Print Screen
   * `Print Screen` on `P`
+* #### Windows 10 Virtual Desktop Switching
+  * `Previous Virtual Desktop` on `,`
+  * `Next Virtual Desktop` on `.`
+* #### Browser Back/Forward (primarily for ThinkPad keyboards)
+  * `Browser Back` on `PgUp`
+  * `Browser Forward` on `PgDn`
