@@ -83,14 +83,14 @@ SetWorkingDir %A_ScriptDir%
 ; Space Cadet Shift ---------------------------------------------
 	~LShift::
 		KeyWait, LShift
-		if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "LShift") {
+		if (A_TimeSinceThisHotkey < 200 and A_PriorKey = "LShift") {
 			Send, (
 		}
 	return
 
 	~RShift::
 		KeyWait, RShift
-		if (A_TimeSinceThisHotkey < 300 and A_PriorKey = "RShift") {
+		if (A_TimeSinceThisHotkey < 200 and A_PriorKey = "RShift") {
 			Send, )
 		}
 	return
