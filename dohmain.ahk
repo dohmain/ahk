@@ -113,3 +113,9 @@ SetWorkingDir %A_ScriptDir%
 	CapsLock & PgDn::
 		SendInput {Browser_Forward}
 		return
+
+; Links to my stuff ---------------------------------------------
+
+	:*:sitejd::https://www.joedoh.dev/
+	:*:gitjd::https://github.com/dohmain
+	:*:linkjd::https://www.linkedin.com/in/joe-doh
